@@ -28,44 +28,7 @@ echo 'eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/sp
 
 # CONFIG-GIT ==================================================================================
 brew install git
-cat <<EOF > $HOME/.gitconfig
-[user]
-	name = Renato Adorno
-	email = renattoadorno@gmail.com
 
-[core]
-	editor = code
-
-[color]
-    status = auto
-    diff = auto
-    branch = auto
-    interactive = auto
-    ui = true
-
-[color "status"]
-    added = green
-	changed = yellow
-	untracked = red
-
-[alias]
-    fc = !git add . && git commit -m '🎉 initial commit' && git branch -m main
-    cmt = commit -m
-    ck = checkout
-    cm = checkout main
-    cb = checkout -b
-    ca = commit --amend --no-edit
-    rc = commit --amend -m
-    rb = branch -m
-    st = status -sb
-    sf = show --name-only
-    lg = log --pretty=format:'%Cred%h%Creset %C(bold)%cr%Creset %Cgreen<%an>%Creset %s' --max-count=30
-    incoming = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..@{u})
-    outgoing = !(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(white)- %C(red)%an %C(white)- %C(cyan)%d%Creset %s %C(white)- %ar%Creset' @{u}..)
-    unstage = reset HEAD --
-    undo = checkout --
-    rollback = reset --soft HEAD~1
-EOF
 
 # ZNIT ========================================================================================
 brew install zinit
@@ -145,3 +108,19 @@ export LDFLAGS="-L/opt/homebrew/opt/libffi/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/libffi/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/libffi/lib/pkgconfig"
 EOF
+
+# brew install gnupg
+
+# gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+
+# \curl -sSL https://get.rvm.io | bash
+
+# #rvm install "ruby-2.7.8" --with-openssl-dir="$(brew --prefix)/opt/openssl@1.1/"
+# # OU 
+# rvm pkg install openssl
+
+# rvm install 2.7.8 --with-openssl-dir=$HOME/.rvm/usr
+
+# rvm use 2.7.8
+
+# gem install cocoapods -v 1.14.3
